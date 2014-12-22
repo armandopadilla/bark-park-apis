@@ -29,6 +29,18 @@ class ParkController extends BaseController {
 			$errorCount++;
 			$errorMessages[] = "Address or GPS not supplied.";
 		}
+		
+		//Break up the city and state
+		$city  = "";
+		$state = ""; 
+		$cityStateElems = explode(",", $cityState);
+		if(isset($cityStateElems[0])){
+			$city = $cityStateElems[0];
+		}
+		
+		if(isset($cityStateElems[1])){
+			$state = $cityStateElems[1];
+		}
 			
 		//Save to database.
 		DB::insert("INSERT INTO parks (name, streetaddress, city, state, date_created, verified) 
