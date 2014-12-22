@@ -18,3 +18,6 @@ Route::get('/', function()
 
 //Search api
 Route::get("/barkpark/v1/search", "SearchController@index");
+
+//Park api
+Route::post("/barkpark/v1/park", "ParkController@index");  //Save Park
