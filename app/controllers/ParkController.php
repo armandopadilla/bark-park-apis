@@ -43,7 +43,7 @@ class ParkController extends BaseController {
 		}
 			
 		//Save to database.
-		DB::insert("INSERT INTO parks (name, streetaddress, city, state, date_created, verified) 
+		DB::insert("INSERT INTO parks (name, streetaddress, city, state, date_created, is_verified) 
 				VALUES (?, ?, ?, ?, NOW(), 'no')", array($name, $streetAddress, $city, $state));	
 		
 		
